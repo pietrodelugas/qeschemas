@@ -15,7 +15,7 @@ Authors: Antonio Zambon, Paolo Giannozzi, Pietro Delugas
     <sequence>
       <element type="qes:general_infoType" name="general_info" minOccurs="0" />
       <element type="qes:parallel_infoType" name="parallel_info" minOccurs="0" />
-      <element type="qes:inputType" name="input" />
+      <element type="qes:inputType" name="input" minOccurs="0"/>
       <element type="qes:stepType" name="step" minOccurs="0" maxOccurs="unbounded" />
       <element type="qes:outputType" name="output" minOccurs="0" />
       <element type="qes:cpstatusType" name="STATUS" minOccurs="0"/>
@@ -295,6 +295,7 @@ Authors: Antonio Zambon, Paolo Giannozzi, Pietro Delugas
     <pattern value=".*[xX][cC]_[lL][Dd][Aa]_[cC]_.*"/>
     <pattern value=".*[xX][cC]_[mM]?[gG][Gg][Aa]_[kKcC]_.*"/>
     <pattern value=".*[xX][cC]_[hH][yY][bB]_[mM]?[gG][Gg][Aa]_[kKcC]?_.*"/>
+    <pattern value=".*SLA.*"/>
     </restriction>
   </simpleType>
 
