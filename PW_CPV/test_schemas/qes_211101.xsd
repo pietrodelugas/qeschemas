@@ -21,10 +21,7 @@ datecode 211101
       <element type="qes:outputType" name="output" minOccurs="0" />
       <element type="qes:cpstatusType" name="STATUS" minOccurs="0"/>
       <element type="qes:cptimestepsType" name="TIMESTEPS" minOccurs="0"/>
-      <choice maxOccurs="1" minOccurs="0">
-        <element type="qes:statusType" name="status" minOccurs="0" />
-        <element type="qes:statusType" name="exit_status"/>
-      </choice>
+      <element type="qes:statusType" name="exit_status"  minOccurs="0" maxOccurs="1"/>
       <choice minOccurs="1">
         <element type="nonNegativeInteger" name="cputime" minOccurs="0"/>
         <element type="qes:timingType" name="timing_info" minOccurs="0"/>
@@ -628,7 +625,7 @@ datecode 211101
       <element type="double" name="wmass" minOccurs="0" />
       <element type="double" name="cell_factor" minOccurs="0" />
       <choice minOccurs="0" maxOccurs="1">
-        <element  type="qes:celldofreeType" name="cell_do_free" />
+        <element  type="qes:celldofreeType" name="cell_do_free"  minOccurs="0"/>
         <sequence>
           <!-- legacy deprecated choice --> 
           <element type="boolean" name="fix_volume" minOccurs="0" />
@@ -925,13 +922,13 @@ datecode 211101
       <element type="boolean" name="noncolin"/>
       <element type="boolean" name="spinorbit"/>
       <choice>
-        <element type="double"  name="total"/>
-        <element type="qes:d3vectorType" name="total_vec"/>
+        <element type="double"  name="total" minOccurs="0"/>
+        <element type="qes:d3vectorType" name="total_vec" minOccurs="0"/>
       </choice>
       <element type="double"  name="absolute"/>
       <choice minOccurs="0" maxOccurs="1">
-        <element  type="qes:scalmagsType" name="Scalar_Site_Magnetic_Moments"/>
-        <element  type="qes:d3magsType"   name="Site_Magnetizations"/>
+        <element  type="qes:scalmagsType" name="Scalar_Site_Magnetic_Moments" minOccurs="0"/>
+        <element  type="qes:d3magsType"   name="Site_Magnetizations" minOccurs="0"/>
       </choice>
       <element type="boolean" name="do_magnetization" minOccurs="0"/>
     </sequence>
@@ -1161,9 +1158,9 @@ datecode 211101
   <complexType name="matrixType">
     <simpleContent>
       <extension base="qes:doubleListType">
-        <attribute name="rank" type="positiveInteger" />
-        <attribute name="dims" type="qes:integerListType" />
-        <attribute name="order">
+        <attribute name="rank" type="positiveInteger" use="required"/>
+        <attribute name="dims" type="qes:integerListType" use="required"/>
+        <attribute name="order" use="optional">
           <simpleType>
             <restriction base="string">
               <enumeration value="F"/>
