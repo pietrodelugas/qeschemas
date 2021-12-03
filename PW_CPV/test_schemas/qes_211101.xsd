@@ -99,7 +99,7 @@ datecode 211101
       <element type="qes:basis_setType" name="basis_set"/>
       <element type="qes:dftType" name="dft"/>
       <element type="qes:outputPBCType" name="boundary_conditions" minOccurs="0" />
-      <element type="qes:magnetizationType" name="magnetization"/>
+      <element type="qes:magnetizationType" name="magnetization" minOccurs="0"/>
       <element type="qes:total_energyType" name="total_energy"/>
       <element type="qes:band_structureType" name="band_structure"/>
       <element type="qes:matrixType" name="forces" minOccurs="0"/>
