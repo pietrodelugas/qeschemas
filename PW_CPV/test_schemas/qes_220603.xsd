@@ -57,6 +57,7 @@ datecode 220603
       <element type="qes:atomic_speciesType" name="atomic_species"/>
       <element type="qes:atomic_structureType" name="atomic_structure"/>
       <element type="qes:dftType" name="dft"/>
+      <element type="qes:gammadftType" name="gammaDFT" minOccurs="0" maxOccurs="1"/> 
       <element type="qes:spinType" name="spin"/>
       <element type="qes:bandsType" name="bands"/>
       <element type="qes:basisType" name="basis"/>
@@ -463,6 +464,22 @@ datecode 220603
       <element type="boolean" name="noncolin"/>
       <element type="boolean" name="spinorbit"/>
     </sequence>
+  </complexType>
+  <complexType name="gammadftType">
+    <sequence>
+      <element type="double" name="sic_gamma" minOccurs="1"/>
+      <element type="qes:h_or_eType" name="polaron_type" minOccurs="1"/>
+      <element type="boolean" name="sic_energy" minOccurs="1"/>
+      <element type="double" name="scissor_vb"  minOccurs="1"/>
+      <element type="double" name="scissor_cp"  minOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="h_or_eType">
+    <simpleContent>
+      <restriction base="string">
+        <pattern value="[eh]"/>
+      </restriction>
+    </simpleContent>
   </complexType>
   <complexType name="bandsType">
     <sequence>
